@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muhammad Qasim | Global IT Specialist & Systems Administrator</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            900: '#0c4a6e',
+                            dark: '#0B1120',
+                            card: '#1E293B',
+                            border: '#334155'
+                        },
+                        emerald: {
+                            400: '#34d399',
+                            500: '#10b981',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome Icons & Google Font -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0B1120;
+            color: #F8FAFC;
+        }
+        .glass-panel {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glass-nav {
+            background: rgba(11, 17, 32, 0.85);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glow-effect {
+            box-shadow: 0 0 25px -5px rgba(56, 189, 248, 0.3);
+        }
+        .glow-emerald {
+            box-shadow: 0 0 25px -5px rgba(52, 211, 153, 0.3);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #0B1120;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="custom-scrollbar min-h-screen text-slate-100 antialiased selection:bg-sky-500 selection:text-white">
+
+    <!-- Top Navigation Bar -->
+    <nav class="fixed top-0 left-0 right-0 z-50 glass-nav transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Brand Logo / Name -->
+                <a href="#hero" class="flex items-center space-x-3 group">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-sky-500 to-emerald-400 flex items-center justify-center text-slate-900 font-bold text-xl shadow-lg group-hover:scale-105 transition-transform">
+                        MQ
+                    </div>
+                    <div>
+                        <span class="text-lg font-bold tracking-tight text-white group-hover:text-sky-400 transition-colors">Muhammad Qasim</span>
+                        <span class="block text-xs text-slate-400">M.Sc. IT | Systems Specialist</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Nav Links -->
+                <div class="hidden md:flex items-center space-x-1 lg:space-x-6 text-sm font-medium">
+                    <a href="#about" class="px-3 py-2 text-slate-300 hover:text-sky-400 hover:bg-slate-800/50 rounded-lg transition-colors">About</a>
+                    <a href="#workplace" class="px-3 py-2 text-slate-300 hover:text-sky-400 hover:bg-slate-800/50 rounded-lg transition-colors">Work Environment</a>
+                    <a href="#timeline" class="px-3 py-2 text-slate-300 hover:text-sky-400 hover:bg-slate-800/50 rounded-lg transition-colors">Experience</a>
+                    <a href="#skills" class="px-3 py-2 text-slate-300 hover:text-sky-400 hover:bg-slate-800/50 rounded-lg transition-colors">Technical Stack</a>
+                    <a href="#academics" class="px-3 py-2 text-slate-300 hover:text-sky-400 hover:bg-slate-800/50 rounded-lg transition-colors">Academics</a>
+                    <a href="#contact" class="px-3 py-2 text-slate-300 hover:text-sky-400 hover:bg-slate-800/50 rounded-lg transition-colors">Contact</a>
+                </div>
+
+                <!-- CTA Button -->
+                <div class="hidden sm:flex items-center space-x-3">
+                    <button onclick="openCVModal()" class="px-4 py-2 text-xs font-semibold rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition-all flex items-center space-x-2">
+                        <i class="fa-solid fa-file-pdf text-red-400"></i>
+                        <span>CV Options</span>
+                    </button>
+                    <a href="https://wa.me/923034118796" target="_blank" class="px-4 py-2 text-xs font-semibold rounded-lg bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 transition-all flex items-center space-x-2 glow-emerald">
+                        <i class="fa-brands fa-whatsapp text-emerald-400 text-sm"></i>
+                        <span>WhatsApp</span>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="flex md:hidden">
+                    <button id="mobile-menu-btn" class="p-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 focus:outline-none">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Nav Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-900/95 border-b border-slate-800 px-4 pt-2 pb-6 space-y-2">
+            <a href="#about" class="block px-3 py-2 text-slate-300 hover:text-sky-400 hover:bg-slate-800 rounded-lg">About</a>
+            <a href="#workplace" class="block px-3 py-2 text-slate-300 hover:text-sky-400 hover:bg-slate-800 rounded-lg">Work Environment</a>
+            <a href="#timeline" class="block px-3 py-2 text-slate-300 hover:text-sky-400 hover:bg-slate-800 rounded-lg">Experience</a>
+            <a href="#skills" class="block px-3 py-2 text-slate-300 hover:text-sky-400 hover:bg-slate-800 rounded-lg">Technical Stack</a>
+            <a href="#academics" class="block px-3 py-2 text-slate-300 hover:text-sky-400 hover:bg-slate-800 rounded-lg">Academics</a>
+            <a href="#contact" class="block px-3 py-2 text-slate-300 hover:text-sky-400 hover:bg-slate-800 rounded-lg">Contact</a>
+            <div class="pt-4 flex flex-col space-y-2">
+                <button onclick="openCVModal()" class="w-full py-2.5 text-center text-xs font-semibold rounded-lg bg-slate-800 text-slate-200 border border-slate-700">
+                    Download CV Options
+                </button>
+                <a href="https://wa.me/923034118796" target="_blank" class="w-full py-2.5 text-center text-xs font-semibold rounded-lg bg-emerald-500 text-slate-950 font-bold flex items-center justify-center space-x-2">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <span>Contact via WhatsApp</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="pt-24 space-y-24">
+
+        <!-- Hero Section -->
+        <section id="hero" class="relative overflow-hidden py-16 lg:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="absolute top-0 right-1/4 w-96 h-96 bg-sky-500/10 rounded-full blur-3xl -z-10 pointer-events-none"></div>
+            <div class="absolute bottom-0 left-1/4 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl -z-10 pointer-events-none"></div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- Hero Left Info -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center space-x-2 px-3 py-1.5 rounded-full bg-slate-800/80 border border-sky-500/30 text-sky-400 text-xs font-medium">
+                        <span class="flex h-2 w-2 rounded-full bg-sky-400 animate-pulse"></span>
+                        <span>Open to Remote Roles & Global Master's Admission</span>
+                    </div>
+
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white">
+                        Muhammad Qasim
+                    </h1>
+                    <p class="text-xl sm:text-2xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-sky-400 via-emerald-300 to-sky-200">
+                        Global IT Specialist & Systems Administrator | Operations & IAM Lead
+                    </p>
+
+                    <p class="text-slate-300 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                        5+ years of proven expertise managing enterprise banking IT infrastructure at MCB Bank Ltd, government citizen portals, and high-volume remote technical support. Specialist in Active Directory, Identity & Access Management (IAM), Cisco networking, and zero-defect SLA compliance.
+                    </p>
+
+                    <!-- Academic / Professional Merit Badges -->
+                    <div class="flex flex-wrap gap-2.5 justify-center lg:justify-start pt-2">
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-800/90 text-slate-300 border border-slate-700 text-xs font-medium flex items-center space-x-2">
+                            <i class="fa-solid fa-graduation-cap text-sky-400"></i>
+                            <span>M.Sc. IT (University of Sargodha)</span>
+                        </span>
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-800/90 text-slate-300 border border-slate-700 text-xs font-medium flex items-center space-x-2">
+                            <i class="fa-solid fa-building-columns text-emerald-400"></i>
+                            <span>MCB Bank OG-2 Officer</span>
+                        </span>
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-800/90 text-slate-300 border border-slate-700 text-xs font-medium flex items-center space-x-2">
+                            <i class="fa-solid fa-award text-yellow-400"></i>
+                            <span>U.S. Consulate English Scholar</span>
+                        </span>
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-800/90 text-slate-300 border border-slate-700 text-xs font-medium flex items-center space-x-2">
+                            <i class="fa-solid fa-star text-indigo-400"></i>
+                            <span>PITB Merit Selected</span>
+                        </span>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
+                        <a href="#workplace" class="px-6 py-3.5 rounded-xl bg-gradient-to-r from-sky-500 to-sky-600 hover:from-sky-600 hover:to-sky-700 text-white font-semibold text-sm shadow-lg glow-effect transition-all flex items-center justify-center space-x-2">
+                            <i class="fa-solid fa-building"></i>
+                            <span>Bank & Govt Office Showcase</span>
+                        </a>
+                        <a href="#timeline" class="px-6 py-3.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-semibold text-sm transition-all flex items-center justify-center space-x-2">
+                            <i class="fa-solid fa-briefcase text-slate-400"></i>
+                            <span>Explore Experience</span>
+                        </a>
+                        <a href="#contact" class="px-6 py-3.5 rounded-xl bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 font-semibold text-sm transition-all flex items-center justify-center space-x-2">
+                            <i class="fa-solid fa-paper-plane"></i>
+                            <span>Contact Me</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Hero Right Card Profile Visual -->
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="relative w-full max-w-md">
+                        <!-- Ambient backlight -->
+                        <div class="absolute -inset-1 rounded-3xl bg-gradient-to-r from-sky-500 to-emerald-400 opacity-30 blur-lg"></div>
+                        
+                        <div class="relative rounded-2xl glass-panel p-6 space-y-6">
+                            <!-- Header / Status -->
+                            <div class="flex items-center justify-between pb-4 border-b border-slate-800">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-12 h-12 rounded-full bg-slate-800 border-2 border-sky-400 flex items-center justify-center font-bold text-sky-400 text-lg">
+                                        MQ
+                                    </div>
+                                    <div>
+                                        <h3 class="font-bold text-white">Muhammad Qasim</h3>
+                                        <p class="text-xs text-slate-400">Sargodha, Pakistan (Open to Relocation)</p>
+                                    </div>
+                                </div>
+                                <span class="px-2.5 py-1 rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 text-[10px] font-bold tracking-wide">
+                                    VERIFIED PRO
+                                </span>
+                            </div>
+
+                            <!-- Highlights List -->
+                            <div class="space-y-3 text-sm">
+                                <div class="flex items-start space-x-3 p-3 rounded-xl bg-slate-900/60 border border-slate-800">
+                                    <i class="fa-solid fa-building-columns text-sky-400 mt-1"></i>
+                                    <div>
+                                        <div class="font-medium text-slate-200">MCB Bank Ltd (OG-2 Officer)</div>
+                                        <div class="text-xs text-slate-400">System access, LAN, KYC & compliance audit.</div>
+                                    </div>
+                                </div>
+                                <div class="flex items-start space-x-3 p-3 rounded-xl bg-slate-900/60 border border-slate-800">
+                                    <i class="fa-solid fa-headset text-emerald-400 mt-1"></i>
+                                    <div>
+                                        <div class="font-medium text-slate-200">CoinPayU Global Remote Support</div>
+                                        <div class="text-xs text-slate-400">50,000+ active users, 98.5% SLA resolution.</div>
+                                    </div>
+                                </div>
+                                <div class="flex items-start space-x-3 p-3 rounded-xl bg-slate-900/60 border border-slate-800">
+                                    <i class="fa-solid fa-school text-indigo-400 mt-1"></i>
+                                    <div>
+                                        <div class="font-medium text-slate-200">Vision Computer College Director</div>
+                                        <div class="text-xs text-slate-400">Managed 150+ workstations & academic labs.</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Readiness Banner -->
+                            <div class="p-3.5 rounded-xl bg-gradient-to-r from-sky-900/40 to-slate-900 border border-sky-500/20 flex items-center justify-between text-xs">
+                                <div class="flex items-center space-x-2 text-slate-300">
+                                    <i class="fa-solid fa-globe text-sky-400"></i>
+                                    <span>Coverage: US / EU / APAC Hours</span>
+                                </div>
+                                <span class="text-sky-400 font-bold">100% Remote Ready</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Key Metrics Counter Section -->
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
+                <div class="p-6 rounded-2xl glass-panel border border-slate-800 text-center hover:border-sky-500/40 transition-colors">
+                    <div class="text-3xl sm:text-4xl font-extrabold text-sky-400 mb-1">5+</div>
+                    <div class="text-xs sm:text-sm font-medium text-slate-400 uppercase tracking-wider">Years IT Experience</div>
+                </div>
+                <div class="p-6 rounded-2xl glass-panel border border-slate-800 text-center hover:border-emerald-500/40 transition-colors">
+                    <div class="text-3xl sm:text-4xl font-extrabold text-emerald-400 mb-1">98.5%</div>
+                    <div class="text-xs sm:text-sm font-medium text-slate-400 uppercase tracking-wider">SLA First Contact Rate</div>
+                </div>
+                <div class="p-6 rounded-2xl glass-panel border border-slate-800 text-center hover:border-sky-500/40 transition-colors">
+                    <div class="text-3xl sm:text-4xl font-extrabold text-sky-400 mb-1">50K+</div>
+                    <div class="text-xs sm:text-sm font-medium text-slate-400 uppercase tracking-wider">Users Supported Globally</div>
+                </div>
+                <div class="p-6 rounded-2xl glass-panel border border-slate-800 text-center hover:border-emerald-500/40 transition-colors">
+                    <div class="text-3xl sm:text-4xl font-extrabold text-emerald-400 mb-1">0</div>
+                    <div class="text-xs sm:text-sm font-medium text-slate-400 uppercase tracking-wider">Audit Non-Compliance Defect</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Showcase Gallery (Office & Work Images Environment) -->
+        <section id="workplace" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+            <div class="text-center max-w-3xl mx-auto space-y-3">
+                <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-sky-500/10 text-sky-400 border border-sky-500/20 text-xs font-semibold">
+                    <i class="fa-solid fa-camera"></i>
+                    <span>WORK ENVIRONMENT & ON-SITE OPS</span>
+                </div>
+                <h2 class="text-3xl sm:text-4xl font-bold text-white">
+                    Interactive Workplace Gallery
+                </h2>
+                <p class="text-slate-400 text-sm sm:text-base">
+                    Visual representation of real-world operational environments managed across banking institutions, government servers, computer college labs, and remote command centers.
+                </p>
+            </div>
+
+            <!-- Gallery Filter Tabs -->
+            <div class="flex flex-wrap items-center justify-center gap-2">
+                <button onclick="filterGallery('all')" class="gallery-tab active px-4 py-2 rounded-xl text-xs sm:text-sm font-medium bg-sky-500 text-white transition-all">
+                    All Environments
+                </button>
+                <button onclick="filterGallery('banking')" class="gallery-tab px-4 py-2 rounded-xl text-xs sm:text-sm font-medium bg-slate-800 text-slate-300 hover:text-white transition-all">
+                    Banking & Financial
+                </button>
+                <button onclick="filterGallery('govt')" class="gallery-tab px-4 py-2 rounded-xl text-xs sm:text-sm font-medium bg-slate-800 text-slate-300 hover:text-white transition-all">
+                    Govt & Public Sector
+                </button>
+                <button onclick="filterGallery('labs')" class="gallery-tab px-4 py-2 rounded-xl text-xs sm:text-sm font-medium bg-slate-800 text-slate-300 hover:text-white transition-all">
+                    Academic Labs
+                </button>
+                <button onclick="filterGallery('remote')" class="gallery-tab px-4 py-2 rounded-xl text-xs sm:text-sm font-medium bg-slate-800 text-slate-300 hover:text-white transition-all">
+                    Remote Ops
+                </button>
+            </div>
+
+            <!-- Gallery Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="gallery-grid">
+
+                <!-- Item 1: Banking -->
+                <div class="gallery-item banking group rounded-2xl glass-panel overflow-hidden border border-slate-800 hover:border-sky-500/50 transition-all duration-300">
+                    <div class="relative h-56 overflow-hidden bg-slate-900">
+                        <img src="https://images.unsplash.com/photo-1556742049-0a670f4a4591?auto=format&fit=crop&w=800&q=80" alt="MCB Bank Workstation" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
+                        <span class="absolute top-3 left-3 px-3 py-1 rounded-md bg-sky-500/90 text-slate-950 text-[11px] font-bold">
+                            MCB BANK LTD.
+                        </span>
+                        <button onclick="openImageModal('MCB Bank Enterprise Branch IT Workstation & Network Operations','https://images.unsplash.com/photo-1556742049-0a670f4a4591?auto=format&fit=crop&w=1200&q=80','Sargodha Branch - Supervised Active Directory credentials, core banking terminal connectivity, network security compliance, and daily financial data audit trails for 100+ internal staff terminals.')" class="absolute bottom-3 right-3 w-8 h-8 rounded-full bg-slate-900/80 text-white flex items-center justify-center hover:bg-sky-500 transition-colors">
+                            <i class="fa-solid fa-expand text-xs"></i>
+                        </button>
+                    </div>
+                    <div class="p-5 space-y-2">
+                        <h3 class="font-bold text-white text-base group-hover:text-sky-400 transition-colors">
+                            MCB Bank Enterprise Branch IT & Systems
+                        </h3>
+                        <p class="text-xs text-slate-400 leading-relaxed">
+                            Managed core banking server connectivity, Active Directory group policies, endpoint security, and zero-defect compliance audits as OG-2 Officer.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Item 2: Government -->
+                <div class="gallery-item govt group rounded-2xl glass-panel overflow-hidden border border-slate-800 hover:border-emerald-500/50 transition-all duration-300">
+                    <div class="relative h-56 overflow-hidden bg-slate-900">
+                        <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&q=80" alt="Govt Data Center" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
+                        <span class="absolute top-3 left-3 px-3 py-1 rounded-md bg-emerald-500/90 text-slate-950 text-[11px] font-bold">
+                            LOCAL GOVT PUNJAB
+                        </span>
+                        <button onclick="openImageModal('Government Server Room & Network Infrastructure','https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=80','Punjab Government Regional Office - Maintained enterprise LAN switches, citizen service portals, server patch management, and hardware troubleshooting across departmental workstations.')" class="absolute bottom-3 right-3 w-8 h-8 rounded-full bg-slate-900/80 text-white flex items-center justify-center hover:bg-emerald-500 transition-colors">
+                            <i class="fa-solid fa-expand text-xs"></i>
+                        </button>
+                    </div>
+                    <div class="p-5 space-y-2">
+                        <h3 class="font-bold text-white text-base group-hover:text-emerald-400 transition-colors">
+                            Government Network & Server Racks
+                        </h3>
+                        <p class="text-xs text-slate-400 leading-relaxed">
+                            Administered regional LAN networks, portal security policies, multi-node workstation maintenance, and OS deployments for Punjab Government portals.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Item 3: Academic Labs -->
+                <div class="gallery-item labs group rounded-2xl glass-panel overflow-hidden border border-slate-800 hover:border-sky-500/50 transition-all duration-300">
+                    <div class="relative h-56 overflow-hidden bg-slate-900">
+                        <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=800&q=80" alt="Vision College Computer Lab" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
+                        <span class="absolute top-3 left-3 px-3 py-1 rounded-md bg-indigo-500/90 text-white text-[11px] font-bold">
+                            VISION COMPUTER COLLEGE
+                        </span>
+                        <button onclick="openImageModal('Vision Computer College Multi-Terminal IT Lab','https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=1200&q=80','Director & Administrator Role - Supervised 150+ PC terminals, instructor setups, exam logistics, lab networking, software licensing, and technical skill workshops.')" class="absolute bottom-3 right-3 w-8 h-8 rounded-full bg-slate-900/80 text-white flex items-center justify-center hover:bg-indigo-500 transition-colors">
+                            <i class="fa-solid fa-expand text-xs"></i>
+                        </button>
+                    </div>
+                    <div class="p-5 space-y-2">
+                        <h3 class="font-bold text-white text-base group-hover:text-indigo-400 transition-colors">
+                            Academic Computer Lab & Director Ops
+                        </h3>
+                        <p class="text-xs text-slate-400 leading-relaxed">
+                            Supervised 150+ workstation terminals, instructor staff onboarding, lab budgets, and technical examination infrastructure at Vision Computer College.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Item 4: Remote Command Center -->
+                <div class="gallery-item remote group rounded-2xl glass-panel overflow-hidden border border-slate-800 hover:border-sky-500/50 transition-all duration-300">
+                    <div class="relative h-56 overflow-hidden bg-slate-900">
+                        <img src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=800&q=80" alt="Remote IT Support Desk" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
+                        <span class="absolute top-3 left-3 px-3 py-1 rounded-md bg-purple-500/90 text-white text-[11px] font-bold">
+                            COINPAYU REMOTE HUB
+                        </span>
+                        <button onclick="openImageModal('CoinPayU Global Remote Technical Helpdesk','https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=1200&q=80','Global Support Operations - Multi-monitor remote desktop setup utilizing AnyDesk, TeamViewer, Zendesk ticketing, and diagnostic scripts for 50k+ active international users.')" class="absolute bottom-3 right-3 w-8 h-8 rounded-full bg-slate-900/80 text-white flex items-center justify-center hover:bg-purple-500 transition-colors">
+                            <i class="fa-solid fa-expand text-xs"></i>
+                        </button>
+                    </div>
+                    <div class="p-5 space-y-2">
+                        <h3 class="font-bold text-white text-base group-hover:text-purple-400 transition-colors">
+                            Remote Multi-Monitor Technical Setup
+                        </h3>
+                        <p class="text-xs text-slate-400 leading-relaxed">
+                            Equipped with high-speed fiber connection, backup power UPS, AnyDesk, TeamViewer, and Zendesk workflows for 24/7 global shift availability.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Item 5: Banking Security -->
+                <div class="gallery-item banking group rounded-2xl glass-panel overflow-hidden border border-slate-800 hover:border-sky-500/50 transition-all duration-300">
+                    <div class="relative h-56 overflow-hidden bg-slate-900">
+                        <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80" alt="IAM & Active Directory" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
+                        <span class="absolute top-3 left-3 px-3 py-1 rounded-md bg-sky-500/90 text-slate-950 text-[11px] font-bold">
+                            IDENTITY & ACCESS
+                        </span>
+                        <button onclick="openImageModal('Identity & Access Management (IAM) Console','https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1200&q=80','Active Directory & IAM Governance - Administering Role-Based Access Control (RBAC), Multi-Factor Authentication (MFA), user provisioning, and financial data privilege security.')" class="absolute bottom-3 right-3 w-8 h-8 rounded-full bg-slate-900/80 text-white flex items-center justify-center hover:bg-sky-500 transition-colors">
+                            <i class="fa-solid fa-expand text-xs"></i>
+                        </button>
+                    </div>
+                    <div class="p-5 space-y-2">
+                        <h3 class="font-bold text-white text-base group-hover:text-sky-400 transition-colors">
+                            IAM, Active Directory & Security Controls
+                        </h3>
+                        <p class="text-xs text-slate-400 leading-relaxed">
+                            Administered Role-Based Access Control (RBAC), user privilege provisioning, MFA, and quarterly compliance checks at MCB Bank.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Item 6: Network Troubleshooting -->
+                <div class="gallery-item remote govt group rounded-2xl glass-panel overflow-hidden border border-slate-800 hover:border-emerald-500/50 transition-all duration-300">
+                    <div class="relative h-56 overflow-hidden bg-slate-900">
+                        <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=800&q=80" alt="Cisco & Wireshark Diagnostics" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
+                        <span class="absolute top-3 left-3 px-3 py-1 rounded-md bg-emerald-500/90 text-slate-950 text-[11px] font-bold">
+                            NETWORK DIAGNOSTICS
+                        </span>
+                        <button onclick="openImageModal('Cisco Network Switching & Wireshark Diagnostics','https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=1200&q=80','Network Infrastructure - Wireshark diagnostics, Cisco VLAN configuration, OSPF routing, proxy server setups, and VPN troubleshooting for remote and enterprise users.')" class="absolute bottom-3 right-3 w-8 h-8 rounded-full bg-slate-900/80 text-white flex items-center justify-center hover:bg-emerald-500 transition-colors">
+                            <i class="fa-solid fa-expand text-xs"></i>
+                        </button>
+                    </div>
+                    <div class="p-5 space-y-2">
+                        <h3 class="font-bold text-white text-base group-hover:text-emerald-400 transition-colors">
+                            Cisco Networking & Packet Diagnostics
+                        </h3>
+                        <p class="text-xs text-slate-400 leading-relaxed">
+                            Experienced in Wireshark packet capture analysis, Cisco VLAN/OSPF setup, VPN setup, DNS/DHCP routing, and hardware diagnostics.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Professional Experience Timeline -->
+        <section id="timeline" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+            <div class="text-center max-w-3xl mx-auto space-y-3">
+                <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-xs font-semibold">
+                    <i class="fa-solid fa-timeline"></i>
+                    <span>CAREER MILESTONES</span>
+                </div>
+                <h2 class="text-3xl sm:text-4xl font-bold text-white">Professional Experience</h2>
+                <p class="text-slate-400 text-sm sm:text-base">
+                    5+ years of operational excellence in banking systems, government tech administration, and global remote technical helpdesks.
+                </p>
+            </div>
+
+            <!-- Timeline Cards -->
+            <div class="relative border-l-2 border-slate-800 ml-4 md:ml-32 space-y-8">
+
+                <!-- Timeline item 1 -->
+                <div class="relative pl-6 md:pl-10 group">
+                    <!-- Dot -->
+                    <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-sky-500 border-4 border-slate-950 group-hover:scale-125 transition-transform"></div>
+                    
+                    <div class="p-6 rounded-2xl glass-panel border border-slate-800 space-y-3 hover:border-sky-500/40 transition-colors">
+                        <div class="flex flex-wrap items-center justify-between gap-2">
+                            <div>
+                                <h3 class="text-lg font-bold text-white">Operations & Systems Access Officer (OG-2)</h3>
+                                <div class="text-sky-400 text-sm font-semibold">MCB Bank Ltd. | Sargodha, Pakistan</div>
+                            </div>
+                            <span class="px-3 py-1 rounded-full bg-sky-500/10 text-sky-400 border border-sky-500/20 text-xs font-medium">
+                                2024 - Present
+                            </span>
+                        </div>
+                        <ul class="text-slate-300 text-xs sm:text-sm space-y-2 list-disc list-inside leading-relaxed">
+                            <li>Supervise branch network infrastructure, Active Directory user permissions, and endpoint security for 100+ internal workstations.</li>
+                            <li>Lead Tier-2/Tier-3 root cause analysis (RCA) for critical system access errors under strict banking SLAs.</li>
+                            <li>Promoted to Officer Grade II (OG-2) within 1 year with a performance rating of 4/5 for operational zero-defect compliance.</li>
+                            <li>Conduct quarterly identity audits, KYC/AML document verification trails, and regulatory central bank compliance.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Timeline item 2 -->
+                <div class="relative pl-6 md:pl-10 group">
+                    <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-emerald-400 border-4 border-slate-950 group-hover:scale-125 transition-transform"></div>
+                    
+                    <div class="p-6 rounded-2xl glass-panel border border-slate-800 space-y-3 hover:border-emerald-500/40 transition-colors">
+                        <div class="flex flex-wrap items-center justify-between gap-2">
+                            <div>
+                                <h3 class="text-lg font-bold text-white">Customer Support & Technical Specialist (Remote)</h3>
+                                <div class="text-emerald-400 text-sm font-semibold">CoinPayU | Global Remote Operations</div>
+                            </div>
+                            <span class="px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-xs font-medium">
+                                Jan 2025 - Dec 2025
+                            </span>
+                        </div>
+                        <ul class="text-slate-300 text-xs sm:text-sm space-y-2 list-disc list-inside leading-relaxed">
+                            <li>Delivered remote L1/L2 incident management, live chat troubleshooting, and user account recovery for 50,000+ global users.</li>
+                            <li>Maintained a 98.5% first-contact resolution (FCR) rate across high-volume ticketing workflows (Zendesk, AnyDesk, TeamViewer).</li>
+                            <li>Resolved complex Multi-Factor Authentication (MFA), account lockout, proxy configurations, and browser cache issues.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Timeline item 3 -->
+                <div class="relative pl-6 md:pl-10 group">
+                    <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-indigo-400 border-4 border-slate-950 group-hover:scale-125 transition-transform"></div>
+                    
+                    <div class="p-6 rounded-2xl glass-panel border border-slate-800 space-y-3 hover:border-indigo-500/40 transition-colors">
+                        <div class="flex flex-wrap items-center justify-between gap-2">
+                            <div>
+                                <h3 class="text-lg font-bold text-white">Director & Systems Administrator</h3>
+                                <div class="text-indigo-400 text-sm font-semibold">Vision Computer College | Sargodha, Pakistan</div>
+                            </div>
+                            <span class="px-3 py-1 rounded-full bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 text-xs font-medium">
+                                2022 - 2024
+                            </span>
+                        </div>
+                        <ul class="text-slate-300 text-xs sm:text-sm space-y-2 list-disc list-inside leading-relaxed">
+                            <li>Managed IT infrastructure, active domain policies, software licensing, and hardware diagnostics for 150+ lab workstations.</li>
+                            <li>Oversaw institutional budget, candidate recruitment, instructor onboarding, and technical IT curriculum execution.</li>
+                            <li>Optimized ticketing resolution times by 30% and established SOPs for hardware maintenance and lab safety.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Timeline item 4 -->
+                <div class="relative pl-6 md:pl-10 group">
+                    <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-yellow-400 border-4 border-slate-950 group-hover:scale-125 transition-transform"></div>
+                    
+                    <div class="p-6 rounded-2xl glass-panel border border-slate-800 space-y-3 hover:border-yellow-500/40 transition-colors">
+                        <div class="flex flex-wrap items-center justify-between gap-2">
+                            <div>
+                                <h3 class="text-lg font-bold text-white">Systems & IT Officer</h3>
+                                <div class="text-yellow-400 text-sm font-semibold">Local Government Punjab | Punjab, Pakistan</div>
+                            </div>
+                            <span class="px-3 py-1 rounded-full bg-yellow-500/10 text-yellow-400 border border-yellow-500/20 text-xs font-medium">
+                                2023 - 2024
+                            </span>
+                        </div>
+                        <ul class="text-slate-300 text-xs sm:text-sm space-y-2 list-disc list-inside leading-relaxed">
+                            <li>Administered regional LAN networks, citizen service portals, and workstation patch security updates.</li>
+                            <li>Officially selected & merit-qualified as Program Officer by Punjab Information Technology Board (PITB) & Ministry of Law.</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Technical Skills Stack -->
+        <section id="skills" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+            <div class="text-center max-w-3xl mx-auto space-y-3">
+                <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-sky-500/10 text-sky-400 border border-sky-500/20 text-xs font-semibold">
+                    <i class="fa-solid fa-layer-group"></i>
+                    <span>TECHNICAL COMPETENCIES</span>
+                </div>
+                <h2 class="text-3xl sm:text-4xl font-bold text-white">Core Technical Stack</h2>
+                <p class="text-slate-400 text-sm sm:text-base">
+                    Comprehensive command over enterprise systems administration, identity governance, network diagnostics, and helpdesk tools.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+                <!-- Category 1 -->
+                <div class="p-6 rounded-2xl glass-panel border border-slate-800 space-y-4 hover:border-sky-500/40 transition-colors">
+                    <div class="w-12 h-12 rounded-xl bg-sky-500/10 border border-sky-500/30 flex items-center justify-center text-sky-400 text-xl">
+                        <i class="fa-solid fa-key"></i>
+                    </div>
+                    <h3 class="font-bold text-white text-lg">Identity & Access (IAM)</h3>
+                    <div class="space-y-2.5 text-xs text-slate-300">
+                        <div class="flex justify-between font-medium"><span>Active Directory / GPO</span><span>95%</span></div>
+                        <div class="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden"><div class="h-full bg-sky-400 w-[95%]"></div></div>
+
+                        <div class="flex justify-between font-medium"><span>RBAC & Privilege Access (PAM)</span><span>90%</span></div>
+                        <div class="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden"><div class="h-full bg-sky-400 w-[90%]"></div></div>
+
+                        <div class="flex justify-between font-medium"><span>MFA & SSO Protocols</span><span>88%</span></div>
+                        <div class="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden"><div class="h-full bg-sky-400 w-[88%]"></div></div>
+
+                        <div class="flex justify-between font-medium"><span>Zero-Trust Framework</span><span>85%</span></div>
+                        <div class="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden"><div class="h-full bg-sky-400 w-[85%]"></div></div>
+                    </div>
+                </div>
+
+                <!-- Category 2 -->
+                <div class="p-6 rounded-2xl glass-panel border border-slate-800 space-y-4 hover:border-emerald-500/40 transition-colors">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 text-xl">
+                        <i class="fa-solid fa-network-wired"></i>
+                    </div>
+                    <h3 class="font-bold text-white text-lg">Networking & Security</h3>
+                    <div class="space-y-2.5 text-xs text-slate-300">
+                        <div class="flex justify-between font-medium"><span>Wireshark Diagnostics</span><span>90%</span></div>
+                        <div class="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden"><div class="h-full bg-emerald-400 w-[90%]"></div></div>
+
+                        <div class="flex justify-between font-medium"><span>Cisco (VLAN, OSPF, BGP)</span><span>85%</span></div>
+                        <div class="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden"><div class="h-full bg-emerald-400 w-[85%]"></div></div>
+
+                        <div class="flex justify-between font-medium"><span>DNS, DHCP & IPAM</span><span>92%</span></div>
+                        <div class="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden"><div class="h-full bg-emerald-400 w-[92%]"></div></div>
+
+                        <div class="flex justify-between font-medium"><span>VPN & Proxy Setups</span><span>90%</span></div>
+                        <div class="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden"><div class="h-full bg-emerald-400 w-[90%]"></div></div>
+                    </div>
+                </div>
+
+                <!-- Category 3 -->
+                <div class="p-6 rounded-2xl glass-panel border border-slate-800 space-y-4 hover:border-indigo-500/40 transition-colors">
+                    <div class="w-12 h-12 rounded-xl bg-indigo-500/10 border border-indigo-500/30 flex items-center justify-center text-indigo-400 text-xl">
+                        <i class="fa-solid fa-headset"></i>
+                    </div>
+                    <h3 class="font-bold text-white text-lg">Remote Support & Tools</h3>
+                    <div class="space-y-2.5 text-xs text-slate-300">
+                        <div class="flex justify-between font-medium"><span>Zendesk & Jira Helpdesk</span><span>95%</span></div>
+                        <div class="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden"><div class="h-full bg-indigo-400 w-[95%]"></div></div>
+
+                        <div class="flex justify-between font-medium"><span>AnyDesk / TeamViewer / RDP</span><span>98%</span></div>
+                        <div class="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden"><div class="h-full bg-indigo-400 w-[98%]"></div></div>
+
+                        <div class="flex justify-between font-medium"><span>Root Cause Analysis (RCA)</span><span>90%</span></div>
+                        <div class="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden"><div class="h-full bg-indigo-400 w-[90%]"></div></div>
+
+                        <div class="flex justify-between font-medium"><span>SLA Adherence Management</span><span>98%</span></div>
+                        <div class="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden"><div class="h-full bg-indigo-400 w-[98%]"></div></div>
+                    </div>
+                </div>
+
+                <!-- Category 4 -->
+                <div class="p-6 rounded-2xl glass-panel border border-slate-800 space-y-4 hover:border-yellow-500/40 transition-colors">
+                    <div class="w-12 h-12 rounded-xl bg-yellow-500/10 border border-yellow-500/30 flex items-center justify-center text-yellow-400 text-xl">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <h3 class="font-bold text-white text-lg">Banking & Audit Ops</h3>
+                    <div class="space-y-2.5 text-xs text-slate-300">
+                        <div class="flex justify-between font-medium"><span>KYC / AML Documentation</span><span>92%</span></div>
+                        <div class="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden"><div class="h-full bg-yellow-400 w-[92%]"></div></div>
+
+                        <div class="flex justify-between font-medium"><span>Audit Compliance Trails</span><span>96%</span></div>
+                        <div class="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden"><div class="h-full bg-yellow-400 w-[96%]"></div></div>
+
+                        <div class="flex justify-between font-medium"><span>Windows Server Ops</span><span>90%</span></div>
+                        <div class="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden"><div class="h-full bg-yellow-400 w-[90%]"></div></div>
+
+                        <div class="flex justify-between font-medium"><span>Staff Training & Onboarding</span><span>94%</span></div>
+                        <div class="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden"><div class="h-full bg-yellow-400 w-[94%]"></div></div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Academic Credentials & Honors Section -->
+        <section id="academics" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+            <div class="text-center max-w-3xl mx-auto space-y-3">
+                <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-xs font-semibold">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    <span>EDUCATION & CERTIFICATIONS</span>
+                </div>
+                <h2 class="text-3xl sm:text-4xl font-bold text-white">Academic Qualifications & Merit</h2>
+                <p class="text-slate-400 text-sm sm:text-base">
+                    16-Year Higher Education in Information Technology tailored for Master's/PhD admissions & global tech roles.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                <!-- Card 1 -->
+                <div class="p-6 rounded-2xl glass-panel border border-slate-800 space-y-4 hover:border-sky-500/40 transition-colors">
+                    <div class="flex items-center justify-between">
+                        <div class="w-10 h-10 rounded-xl bg-sky-500/10 text-sky-400 flex items-center justify-center font-bold text-lg">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                        </div>
+                        <span class="text-xs text-sky-400 font-semibold px-2.5 py-1 rounded-full bg-sky-500/10 border border-sky-500/20">
+                            16 Years Education
+                        </span>
+                    </div>
+                    <h3 class="text-lg font-bold text-white">M.Sc. Information Technology (MSc IT)</h3>
+                    <p class="text-sky-400 text-xs font-medium">University of Sargodha (2018 - 2022)</p>
+                    <p class="text-slate-300 text-xs leading-relaxed">
+                        Comprehensive coursework covering Enterprise Database Systems, Data Networks, Operating Systems, Advanced Software Engineering, and Computer Networks.
+                    </p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="p-6 rounded-2xl glass-panel border border-slate-800 space-y-4 hover:border-emerald-500/40 transition-colors">
+                    <div class="flex items-center justify-between">
+                        <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center font-bold text-lg">
+                            <i class="fa-solid fa-award"></i>
+                        </div>
+                        <span class="text-xs text-emerald-400 font-semibold px-2.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20">
+                            U.S. Consulate
+                        </span>
+                    </div>
+                    <h3 class="text-lg font-bold text-white">English Access Scholar</h3>
+                    <p class="text-emerald-400 text-xs font-medium">U.S. Consulate General, Lahore</p>
+                    <p class="text-slate-300 text-xs leading-relaxed">
+                        Fluent professional English communication scholarship program focusing on global leadership, cross-cultural collaboration, and advanced technical writing.
+                    </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="p-6 rounded-2xl glass-panel border border-slate-800 space-y-4 hover:border-indigo-500/40 transition-colors">
+                    <div class="flex items-center justify-between">
+                        <div class="w-10 h-10 rounded-xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center font-bold text-lg">
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <span class="text-xs text-indigo-400 font-semibold px-2.5 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20">
+                            PITB Distinction
+                        </span>
+                    </div>
+                    <h3 class="text-lg font-bold text-white">Program Officer Merit Selection</h3>
+                    <p class="text-indigo-400 text-xs font-medium">PITB & Ministry of Law</p>
+                    <p class="text-slate-300 text-xs leading-relaxed">
+                        Officially selected & merit-qualified for superior technical aptitude, system administration expertise, and IT project assessment score (81% score).
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Contact & International Readiness Section -->
+        <section id="contact" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+            <div class="p-8 sm:p-12 rounded-3xl glass-panel border border-slate-800 relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-96 h-96 bg-sky-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    <!-- Left info -->
+                    <div class="lg:col-span-5 space-y-6">
+                        <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-xs font-semibold">
+                            <i class="fa-solid fa-envelope"></i>
+                            <span>GET IN TOUCH</span>
+                        </div>
+                        <h2 class="text-3xl sm:text-4xl font-bold text-white">
+                            Ready for Global Opportunities
+                        </h2>
+                        <p class="text-slate-300 text-sm leading-relaxed">
+                            Whether you are an international recruiter hiring for Remote IT Support & IAM roles, or a university admissions committee in UK, US, Canada, Europe, or Japan — I am ready to connect.
+                        </p>
+
+                        <div class="space-y-4 text-sm pt-2">
+                            <a href="mailto:mq58125@gmail.com" class="flex items-center space-x-3 p-3.5 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-sky-500/50 transition-colors">
+                                <div class="w-10 h-10 rounded-lg bg-sky-500/10 text-sky-400 flex items-center justify-center">
+                                    <i class="fa-solid fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <div class="text-xs text-slate-400">Direct Email</div>
+                                    <div class="font-medium text-white">mq58125@gmail.com</div>
+                                </div>
+                            </a>
+
+                            <a href="https://wa.me/923034118796" target="_blank" class="flex items-center space-x-3 p-3.5 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-emerald-500/50 transition-colors">
+                                <div class="w-10 h-10 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center">
+                                    <i class="fa-brands fa-whatsapp"></i>
+                                </div>
+                                <div>
+                                    <div class="text-xs text-slate-400">Phone / WhatsApp</div>
+                                    <div class="font-medium text-white">+92 303-4118796</div>
+                                </div>
+                            </a>
+
+                            <div class="flex items-center space-x-3 p-3.5 rounded-xl bg-slate-900/80 border border-slate-800">
+                                <div class="w-10 h-10 rounded-lg bg-indigo-500/10 text-indigo-400 flex items-center justify-center">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                </div>
+                                <div>
+                                    <div class="text-xs text-slate-400">Location & Availability</div>
+                                    <div class="font-medium text-white">Sargodha, PK (Open to Global Relocation)</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Form -->
+                    <div class="lg:col-span-7">
+                        <form id="contact-form" onsubmit="handleFormSubmit(event)" class="space-y-4 bg-slate-900/60 p-6 sm:p-8 rounded-2xl border border-slate-800">
+                            <h3 class="text-xl font-bold text-white mb-2">Send Direct Proposal / Query</h3>
+                            
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-medium text-slate-300 mb-1">Your Name</label>
+                                    <input type="text" required placeholder="Hiring Manager / Recruiter" class="w-full px-4 py-2.5 rounded-xl bg-slate-800/80 border border-slate-700 text-white text-sm focus:outline-none focus:border-sky-500">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-medium text-slate-300 mb-1">Your Email</label>
+                                    <input type="email" required placeholder="name@company.com" class="w-full px-4 py-2.5 rounded-xl bg-slate-800/80 border border-slate-700 text-white text-sm focus:outline-none focus:border-sky-500">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-medium text-slate-300 mb-1">Subject / Role / University</label>
+                                <input type="text" required placeholder="Remote IT Support / Master's Admission Inquiry" class="w-full px-4 py-2.5 rounded-xl bg-slate-800/80 border border-slate-700 text-white text-sm focus:outline-none focus:border-sky-500">
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-medium text-slate-300 mb-1">Message</label>
+                                <textarea rows="4" required placeholder="Write your proposal or message details..." class="w-full px-4 py-2.5 rounded-xl bg-slate-800/80 border border-slate-700 text-white text-sm focus:outline-none focus:border-sky-500 resize-none"></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-sky-500 to-emerald-400 hover:from-sky-600 hover:to-emerald-500 text-slate-950 font-bold text-sm transition-all flex items-center justify-center space-x-2 glow-effect">
+                                <i class="fa-solid fa-paper-plane"></i>
+                                <span>Send Message</span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="mt-24 border-t border-slate-800 py-8 text-center text-xs text-slate-500 space-y-2">
+        <p>© 2026 Muhammad Qasim. Global IT Specialist & Systems Administrator.</p>
+        <p class="text-slate-600">M.Sc. Information Technology | MCB Bank Ltd | CoinPayU | Vision Computer College</p>
+    </footer>
+
+    <!-- Image Modal Lightbox -->
+    <div id="image-modal" class="fixed inset-0 z-50 hidden bg-slate-950/90 backdrop-blur-md flex items-center justify-center p-4">
+        <div class="relative max-w-4xl w-full bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden shadow-2xl">
+            <button onclick="closeImageModal()" class="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-slate-950/80 text-white hover:bg-red-500 transition-colors flex items-center justify-center">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+            <div class="p-2 bg-slate-950">
+                <img id="modal-img" src="" alt="Workplace Detail" class="w-full h-80 sm:h-96 object-cover rounded-xl">
+            </div>
+            <div class="p-6 space-y-2">
+                <h3 id="modal-title" class="text-xl font-bold text-white"></h3>
+                <p id="modal-desc" class="text-sm text-slate-300 leading-relaxed"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- CV Download Modal -->
+    <div id="cv-modal" class="fixed inset-0 z-50 hidden bg-slate-950/90 backdrop-blur-md flex items-center justify-center p-4">
+        <div class="relative max-w-md w-full bg-slate-900 border border-slate-800 rounded-2xl p-6 space-y-6">
+            <div class="flex items-center justify-between pb-4 border-b border-slate-800">
+                <h3 class="text-lg font-bold text-white flex items-center space-x-2">
+                    <i class="fa-solid fa-file-pdf text-red-400"></i>
+                    <span>Tailored CV Variants</span>
+                </h3>
+                <button onclick="closeCVModal()" class="text-slate-400 hover:text-white">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+            </div>
+
+            <p class="text-xs text-slate-300">
+                Select the CV version that matches your role or institution requirement:
+            </p>
+
+            <div class="space-y-3">
+                <button onclick="downloadCVSimulation('Muhammad Qasim - Lead Support & IAM')" class="w-full p-3 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-left transition-colors flex items-center justify-between">
+                    <div>
+                        <div class="text-sm font-semibold text-white">Lead Support Specialist & IAM CV</div>
+                        <div class="text-[11px] text-sky-400">Best for Academic & Tech Remote Roles</div>
+                    </div>
+                    <i class="fa-solid fa-download text-slate-400"></i>
+                </button>
+
+                <button onclick="downloadCVSimulation('Muhammad Qasim - IT Support & Network Admin')" class="w-full p-3 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-left transition-colors flex items-center justify-between">
+                    <div>
+                        <div class="text-sm font-semibold text-white">IT Support & Systems Administrator CV</div>
+                        <div class="text-[11px] text-emerald-400">Best for Enterprise IT Infrastructure</div>
+                    </div>
+                    <i class="fa-solid fa-download text-slate-400"></i>
+                </button>
+
+                <button onclick="downloadCVSimulation('Muhammad Qasim - Banking Operations')" class="w-full p-3 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-left transition-colors flex items-center justify-between">
+                    <div>
+                        <div class="text-sm font-semibold text-white">Banking Operations & Compliance CV</div>
+                        <div class="text-[11px] text-indigo-400">Best for Financial Institutions & Audits</div>
+                    </div>
+                    <i class="fa-solid fa-download text-slate-400"></i>
+                </button>
+            </div>
+
+            <div class="text-[11px] text-slate-500 text-center">
+                All variants verified against international ATS screening formats.
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification Toast Message Box -->
+    <div id="toast" class="fixed bottom-6 right-6 z-50 hidden px-5 py-3 rounded-xl bg-emerald-500 text-slate-950 font-bold text-xs shadow-2xl flex items-center space-x-2">
+        <i class="fa-solid fa-circle-check text-base"></i>
+        <span id="toast-msg">Action completed successfully!</span>
+    </div>
+
+    <!-- Page Scripts -->
+    <script>
+        // Mobile Navigation Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Gallery Filter Logic
+        function filterGallery(category) {
+            const items = document.querySelectorAll('.gallery-item');
+            const tabs = document.querySelectorAll('.gallery-tab');
+
+            // Toggle Tab CSS Active States
+            tabs.forEach(tab => {
+                tab.classList.remove('bg-sky-500', 'text-white', 'active');
+                tab.classList.add('bg-slate-800', 'text-slate-300');
+            });
+
+            event.currentTarget.classList.remove('bg-slate-800', 'text-slate-300');
+            event.currentTarget.classList.add('bg-sky-500', 'text-white', 'active');
+
+            // Filter Gallery Items
+            items.forEach(item => {
+                if (category === 'all' || item.classList.contains(category)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        // Image Modal Lightbox Controls
+        function openImageModal(title, imgSrc, desc) {
+            document.getElementById('modal-title').innerText = title;
+            document.getElementById('modal-img').src = imgSrc;
+            document.getElementById('modal-desc').innerText = desc;
+            document.getElementById('image-modal').classList.remove('hidden');
+        }
+
+        function closeImageModal() {
+            document.getElementById('image-modal').classList.add('hidden');
+        }
+
+        // CV Modal Controls
+        function openCVModal() {
+            document.getElementById('cv-modal').classList.remove('hidden');
+        }
+
+        function closeCVModal() {
+            document.getElementById('cv-modal').classList.add('hidden');
+        }
+
+        // CV Download Simulation
+        function downloadCVSimulation(cvName) {
+            closeCVModal();
+            showToast(`Downloading: ${cvName}.pdf`);
+        }
+
+        // Form Submission Simulation
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            showToast("Message sent! Muhammad Qasim will get back to you shortly.");
+            document.getElementById('contact-form').reset();
+        }
+
+        // Toast Notification System
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            const toastMsg = document.getElementById('toast-msg');
+            toastMsg.innerText = message;
+            toast.classList.remove('hidden');
+
+            setTimeout(() => {
+                toast.classList.add('hidden');
+            }, 4000);
+        }
+    </script>
+</body>
+</html>
